@@ -3,12 +3,13 @@ import { CommonModule } from '@angular/common';
 import { RegisterComponent } from './register.component';
 import { RouterModule } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
+import { UserService } from 'src/app/services/common/models/user.service';
 
 
 
 @NgModule({
   declarations: [
-    RegisterComponent
+    RegisterComponent  
   ],
   imports: [
     CommonModule,

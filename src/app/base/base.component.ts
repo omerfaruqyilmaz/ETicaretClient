@@ -23,6 +23,7 @@ export enum SpinnerType{
   CubeTransition="s1",
   Pacman="s2",
   TriangleSkewSpin="s3",
-  Timer="s4"
+  Timer="s4",
+  BallAtom="s5"
   
 }

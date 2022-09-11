@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { AbstractControl, FormBuilder, FormGroup, UntypedFormBuilder, UntypedFormGroup, ValidationErrors, Validators } from '@angular/forms';
+import { AbstractControl, UntypedFormBuilder, UntypedFormGroup, ValidationErrors, Validators } from '@angular/forms';
 import { NgxSpinnerService } from 'ngx-spinner';
-import { BaseComponent } from 'src/app/base/base.component';
-import { Create_User } from 'src/app/contracts/users/create_user';
-import { User } from 'src/app/entities/user';
-import { UserService } from 'src/app/services/common/models/user.service';
-import { CustomToastrService, ToastrMessageType, ToastrPosition } from 'src/app/services/ui/custom-toastr.service';
+import { BaseComponent } from '../../../base/base.component';
+import { Create_User } from '../../../contracts/users/create_user';
+import { User } from '../../../entities/user';
+import { UserService } from '../../../services/common/models/user.service';
+import { CustomToastrService, ToastrMessageType, ToastrPosition } from '../../../services/ui/custom-toastr.service';
 
 @Component({
   selector: 'app-register',
@@ -18,7 +18,7 @@ export class RegisterComponent extends BaseComponent implements OnInit {
     super(spinner)
   }
 
-  frm: FormGroup;
+  frm: UntypedFormGroup;
 
   ngOnInit(): void {
     this.frm = this.formBuilder.group({

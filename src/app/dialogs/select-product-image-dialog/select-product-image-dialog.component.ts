@@ -6,7 +6,7 @@ import { async } from 'rxjs';
 import { SpinnerType } from '../../base/base.component';
 import { List_Product_Image } from '../../contracts/list_product_image';
 import { DialogService } from '../../services/common/dialog.service';
-import { FileUploadOptions } from '../../services/common/fileupload/fileupload.component';
+import { FileUploadOptions } from '../../services/common/file-upload/file-upload.component';
 import { ProductService } from '../../services/common/models/product.service';
 import { BaseDialog } from '../base/base-dialog';
 import { DeleteDialogComponent, DeleteState } from '../delete-dialog/delete-dialog.component';
@@ -60,9 +60,19 @@ export class SelectProductImageDialogComponent extends BaseDialog<SelectProductI
       }
     })
   }
+
+
+
+showCase(imageId: string) {
+  this.spinner.show(SpinnerType.Timer);
+
+  this.productService.changeShowcaseImage(imageId, this.data as string, () => {
+    this.spinner.hide(SpinnerType.Timer);
+  });
+}
 }
 
 
 export enum SelectProductImageState {
-  Close
+Close
 }
